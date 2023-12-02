@@ -38,3 +38,20 @@ jobs:
         registry: ${{env.REGISTRY}}
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Extract Docker metadata
+      id: meta
+      uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+      with:
+        images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+
+    - name: Build and push Docker image
+      id: build-and-push
+      uses: docker/build-push-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a
+      with:
+        context: .
+        push: ${{github.event_name != 'pull_request'}}
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
