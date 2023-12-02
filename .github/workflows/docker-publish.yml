@@ -1,1 +1,7 @@
 name: Publishing Docker image on Github
+
+on:
+  push:
+    branches: ["main", "develop"]
+    tags:
+      - "v*.*.*"
