@@ -1,3 +1,61 @@
+<h2 id="run-project"> 
+   👨‍💻 | How to use
+</h2>
+
+<br>
+
+### Open your Git Terminal and clone this repository
+
+```git
+  $ git clone "git@github.com:lgertel/nexchat.git"
+```
+
+### Make Pull
+
+```git
+  $ git pull "git@github.com:lgertel/nexchat.git"
+```
+
+<br>
+
+This application use `Docker` so you dont need to install and cofigurate anything other than docker on your machine.
+
+> <a target="_blank" href="https://www.docker.com/"> <img width="48px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain-wordmark.svg" /> </a>
+
+<br>
+
+Navigate to project folder and run it using `docker-compose`
+
+```bash
+
+  # After setup docker environment just run this commmand on root project folder:
+
+  $ docker-compose up --build   # For First Time run this command
+
+  $ docker-compose up           # to run project
+
+
+```
+
+```bash
+
+  #Apps Running on:
+
+  $ APP: http://localhost:3000
+
+  See more: ./docker-compose.yaml
+
+```
+
+### Run Without Clone
+
+<p>
+  You can run this site without clone the code, if you have Docker, just Pull the image from repository
+</p>
+
+<br>
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

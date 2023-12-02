@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  nexchat:
+    build: .
+    entrypoint: ["npm", "run", "start:docker"]
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/home/node/app
+    external_links:
+      - "host.docker.internal"
